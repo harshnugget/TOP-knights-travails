@@ -43,16 +43,19 @@ const getNeighbours = (() => {
 
     // Loop through each sign combination
     signCombinations.forEach((combo) => {
-      // Calculate neighbours using the signCombinations
-      let neighbour1 = [x + applySign(combo[0], 1), y + applySign(combo[1], 2)];
-      let neighbour2 = [x + applySign(combo[0], 2), y + applySign(combo[1], 1)];
+      // Loops twice to swap the addends for x and y
+      for (let i = 1; i <= 2; i++) {
+        // Calculate neighbor coordinates
+        let neighbour = [
+          x + applySign(combo[0], i),
+          y + applySign(combo[1], 3 - i), // (3 - i) gives 2 when i=1 and 1 when i=2
+        ];
 
-      // Add the neighbours to the list if they are within bounds
-      [neighbour1, neighbour2].forEach((neighbour) => {
+        // Add the neighbor to the neighbours array if they are within bounds
         if (isWithinBounds(neighbour)) {
           neighbours.push(neighbour);
         }
-      });
+      }
     });
 
     // Return the list of valid neighbours
