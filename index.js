@@ -10,4 +10,4 @@ function output(path) {
   }
 }
 
-output(shortestPath([1, 0], [3, 3]));
+output(shortestPath([0, 0], [1, 2]));
