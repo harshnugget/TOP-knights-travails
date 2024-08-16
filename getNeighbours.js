@@ -9,10 +9,6 @@
 */
 
 const getNeighbours = (() => {
-  // Bounds for an 8x8 grid
-  const MIN = 0;
-  const MAX = 7;
-
   // All the possible sign combinations for moving x and y
   const signCombinations = [
     ['+', '+'],
@@ -27,15 +23,16 @@ const getNeighbours = (() => {
   }
 
   // Helper function to check if a coordinate is within bounds
-  function isWithinBounds([x, y]) {
-    return x >= MIN && x <= MAX && y >= MIN && y <= MAX;
+  function isWithinBounds([x, y], gridSize) {
+    return x >= 0 && x < gridSize && y >= 0 && y < gridSize;
   }
 
-  return function (x, y) {
+  // Return a function initialized to an 8x8 grid
+  return function (x, y, gridSize = 8) {
     // Verify x and y are numbers
-    if (!Number.isInteger(x) || !Number.isInteger(y) || x < MIN || x > MAX || y < MIN || y > MAX) {
+    if (!Number.isInteger(x) || !Number.isInteger(y) || !isWithinBounds([x, y], gridSize)) {
       throw new Error(
-        `Invalid arguments: x=${x}, y=${y}.\nMust be integers within the range ${MIN}-${MAX}.`
+        `Invalid arguments: x=${x}, y=${y}.\nMust be integers within the range 0-${gridSize - 1}.`
       );
     }
 
@@ -52,7 +49,7 @@ const getNeighbours = (() => {
         ];
 
         // Add the neighbor to the neighbours array if they are within bounds
-        if (isWithinBounds(neighbour)) {
+        if (isWithinBounds(neighbour, gridSize)) {
           neighbours.push(neighbour);
         }
       }
