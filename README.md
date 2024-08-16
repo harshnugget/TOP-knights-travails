@@ -10,11 +10,12 @@ output(shortestPath([0, 0], [1, 2])) =>
     1 [ 1, 2 ]
 
 
-output(shortestPath([0, 1], [1, 2])) =>
+output(shortestPath([4, 3], [2, 5])); =>
 
-    You made it in 3 moves! Here's your path:
-    0 [ 1, 0 ]
-    1 [ 2, 2 ]
-    2 [ 4, 1 ]
-    3 [ 3, 3 ]
+    You made it in 4 moves! Here's your path:
+    0 [ 4, 3 ]
+    1 [ 5, 5 ]
+    2 [ 6, 7 ]
+    3 [ 4, 6 ]
+    4 [ 2, 5 ]
 ```

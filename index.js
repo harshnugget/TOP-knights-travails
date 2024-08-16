@@ -13,3 +13,4 @@ function output(path) {
 }
 
 output(shortestPath([0, 0], [1, 2]));
+output(shortestPath([4, 3], [2, 5]));
