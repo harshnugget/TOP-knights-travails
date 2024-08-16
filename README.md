@@ -10,7 +10,7 @@ output(shortestPath([0, 0], [1, 2])) =>
     1 [ 1, 2 ]
 
 
-output(shortestPath([4, 3], [2, 5])); =>
+output(shortestPath([4, 3], [2, 5])) =>
 
     You made it in 4 moves! Here's your path:
     0 [ 4, 3 ]
