@@ -58,9 +58,10 @@ export default function shortestPath(start, end) {
   visited.set(startIndex, null); // "start" vertex has no predecessor
 
   while (queue.length > 0) {
+    // Pop the vertex from the front of the queue and store as the current vertex
     const currentIndex = queue.shift();
 
-    // If we reached the "end" vertex
+    // If found the "end" vertex
     if (currentIndex === endIndex) {
       break;
     }
@@ -68,12 +69,16 @@ export default function shortestPath(start, end) {
     // Get current vertex from the adjacency list
     const currentVertex = list[currentIndex];
 
+    // Get the indices of every neighbour of the current vertex
     currentVertex.neighbours.forEach((neighbour) => {
       const neighbourIndex = getIndex(neighbour);
 
-      // If this vertex has not been visited yet, add the vertex and its predecessor to visited
+      // If this neighbour vertex has not been visited yet, add it and its predecessor to visited
       if (!visited.has(neighbourIndex)) {
+        // Storing the predecessor allows for backtracking the path when the target is found
         visited.set(neighbourIndex, currentIndex);
+
+        // Push the neighbour to the queue
         queue.push(neighbourIndex);
       }
     });
