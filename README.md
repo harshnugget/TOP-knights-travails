@@ -5,7 +5,7 @@
 ```
 output(shortestPath([0, 0], [1, 2])) =>
 
-    You made it in 1 moves! Here's your path:
+    You made it in 1 move! Here's your path:
     0 [ 0, 0 ]
     1 [ 1, 2 ]
 
