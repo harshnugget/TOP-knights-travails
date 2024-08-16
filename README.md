@@ -1,6 +1,6 @@
 # The Odin Project
 
-## Project: Knight Travails
+## Project: Knights Travails
 
 ```
 output(shortestPath([0, 0], [1, 2])) =>
