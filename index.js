@@ -3,7 +3,7 @@ import shortestPath from './shortestPath.js';
 function output(path) {
   if (path) {
     console.log(
-      `You made it in ${path.length - 1} ${path.length === 1 ? 'moves' : 'move'}! Here's your path:`
+      `You made it in ${path.length - 1} ${path.length === 2 ? 'move' : 'moves'}! Here's your path:`
     );
 
     path.forEach((vertex, index) => {
